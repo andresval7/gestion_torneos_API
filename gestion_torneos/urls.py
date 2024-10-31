@@ -24,9 +24,9 @@ from drf_yasg import openapi
 
 #importacion de API propias
 from equipos.api.router import router_equipos
-from fases.api.router import router_fases
+from encuentros.api.router import router_encuentros
 from torneos.api.router import router_torneos
-from tiene.api.router import router_tiene
+from participan.api.router import router_participan
 
 
 schema_view = get_schema_view(
@@ -49,8 +49,8 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path ('api/', include('users.api.router')),
     path ('api/', include(router_equipos.urls)),
-    path ('api/', include(router_fases.urls)),
+    path ('api/', include(router_encuentros.urls)),
     path ('api/', include(router_torneos.urls)),
-    path ('api/', include(router_tiene.urls)),
+    path ('api/', include(router_participan.urls)),
     
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

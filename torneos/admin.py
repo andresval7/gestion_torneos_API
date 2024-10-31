@@ -5,4 +5,4 @@ from torneos.models import Torneo
 @admin.register(Torneo)
 
 class TorneoAdmin(admin.ModelAdmin):
-    list_display = ['nombre_torneo', 'estado_torneo', 'ganador', 'deporte', 'fk_organizador']
+    list_display = ['id_torneo', 'nombre_torneo', 'fecha_inicio', 'fecha_fin', 'ubicacion','deporte', 'tipo_torneo', 'fk_organizador']

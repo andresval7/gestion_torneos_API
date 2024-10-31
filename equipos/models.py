@@ -5,9 +5,10 @@ from torneos.models import Torneo
 
 class Equipo(models.Model):
     id_equipo = models.AutoField(primary_key=True)
-    nombre_equipo = models.CharField(max_length=50, blank=True, null=True)
-    tamano_equipo = models.IntegerField()
-    id_torneo_fk = models.ForeignKey(Torneo, models.DO_NOTHING, db_column='id_torneo_fk')
+    nombre_equipo = models.CharField(max_length=100)
+    ciudad = models.CharField(max_length=100, blank=True, null=True)
+    pais = models.CharField(max_length=100)
+    tamano_equipo = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
