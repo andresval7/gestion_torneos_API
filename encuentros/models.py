@@ -7,7 +7,10 @@ class Encuentro(models.Model):
     fecha = models.DateField()
     hora = models.TimeField()
     ubicacion = models.CharField(max_length=100, blank=True, null=True)
+    
 
     class Meta:
         managed = False
         db_table = 'encuentro'
+
+    
