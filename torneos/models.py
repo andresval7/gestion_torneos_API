@@ -10,7 +10,7 @@ class Torneo(models.Model):
     ubicacion = models.CharField(max_length=100, blank=True, null=True)
     deporte = models.CharField(max_length=60, blank=True, null=True)
     tipo_torneo = models.CharField(max_length=60, blank=True, null=True)
-    fk_organizador = models.ForeignKey(User, models.DO_NOTHING, db_column='fk_organizador')
+    fk_organizador = models.ForeignKey(User, on_delete=models.PROTECT, db_column='fk_organizador', related_name='torneos')
 
     class Meta:
         managed = False

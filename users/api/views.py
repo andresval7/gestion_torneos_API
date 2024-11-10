@@ -2,8 +2,9 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
 from users.models import User
-from users.api.serializers import UserRegisterSerializer, UserSerializer, UserUpdateSerializer
+from users.api.serializers import UserRegisterSerializer, UserSerializer, UserUpdateSerializer, OrganizadorSerializer
 from django.http import Http404
 
 class RegisterView(APIView):
@@ -34,3 +35,7 @@ class UserView(APIView):
             return Response(serializer.data)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class OrganizadorView(generics.ListAPIView):
+    queryset = User.objects.filter(is_staff=True)
+    serializer_class = UserSerializer

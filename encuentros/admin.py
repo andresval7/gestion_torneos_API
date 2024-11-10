@@ -4,4 +4,4 @@ from encuentros.models import Encuentro
 @admin.register(Encuentro)
 
 class EncuentroAdmin(admin.ModelAdmin):
-    list_display = ['id_torneo_fke', 'fecha', 'hora','ubicacion']
+    list_display = ['id_torneo_fke', 'fecha', 'hora','ubicacion','fase_encuentro']

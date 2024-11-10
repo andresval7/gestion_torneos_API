@@ -8,5 +8,4 @@ class User(AbstractUser):
     #comentar en caso de necesitar crear mas superusuarios
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
-
     

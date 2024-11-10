@@ -4,7 +4,7 @@ from users.models import User
 class UserRegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model= User
-        fields = [ 'id', 'email', 'username', 'password']
+        fields = ['email','first_name','last_name', 'password', 'is_staff']
 
     #override del método crear usuarios
     def create(self,validated_data):
@@ -19,7 +19,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email', 'username', 'first_name', 'last_name']
+        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'is_staff']
 
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,3 +27,8 @@ class UserUpdateSerializer(serializers.ModelSerializer):
         fields = ['first_name', 'last_name']
 
     
+    #nuevo serializer para la consulta de usuarios organizadores
+class OrganizadorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email', 'first_name', 'last_name', 'is_staff']

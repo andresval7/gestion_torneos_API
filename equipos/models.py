@@ -13,5 +13,6 @@ class Equipo(models.Model):
     class Meta:
         managed = False
         db_table = 'equipo'
+        
     def __str__(self) :
         return str(self.id_equipo)+"-"+self.nombre_equipo
