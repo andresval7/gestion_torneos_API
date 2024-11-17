@@ -11,6 +11,6 @@ class EncuentroApiViewSet(ModelViewSet):
     queryset = Encuentro.objects.all()
 
     def get_serializer_class(self):
-        if self.action == 'list' or self.action == 'retrieve':
-            return EncuentroSerializers
-        return EncuentroSerializersCreacion
+        if self.action == 'create':
+            return EncuentroSerializersCreacion
+        return EncuentroSerializers
